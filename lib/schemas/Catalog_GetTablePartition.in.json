@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "databaseName": {
+            "required": true,
+            "type": "string"
+        },
+        "schemaName": {
+            "required": true,
+            "type": "string"
+        },
+        "tableName": {
+            "required": true,
+            "type": "string"
+        },
+        "partitionName": {
+            "required": true,
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

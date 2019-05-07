@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "databaseName": {
+            "required": true,
+            "type": "string"
+        },
+        "schemaName": {
+            "required": true,
+            "type": "string"
+        },
+        "tableName": {
+            "required": true,
+            "type": "string"
+        },
+        "partitionName": {
+            "required": true,
+            "type": "string"
+        },
+        "maxRows": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "maxColumns": {
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

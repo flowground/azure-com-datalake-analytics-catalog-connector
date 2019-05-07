@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "databaseName": {
+            "required": true,
+            "type": "string"
+        },
+        "externalDataSourceName": {
+            "required": true,
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

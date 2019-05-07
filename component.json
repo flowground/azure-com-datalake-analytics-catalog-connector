@@ -1,0 +1,800 @@
+{
+    "title": "DataLakeAnalyticsCatalogManagementClient",
+    "description": "Creates an Azure Data Lake Analytics catalog client.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/datalake-analytics-catalog/2016-11-01/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://azure.local/",
+                    "{accountName}.{adlaCatalogDnsSuffix}",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Catalog_ListAcls": {
+            "main": "./lib/actions/Catalog_ListAcls.js",
+            "title": "Retrieves the list of access control list (ACL) entries for the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of access control list (ACL) entries for the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListAcls.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListDatabases": {
+            "main": "./lib/actions/Catalog_ListDatabases.js",
+            "title": "Retrieves the list of databases from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of databases from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListDatabases.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetDatabase": {
+            "main": "./lib/actions/Catalog_GetDatabase.js",
+            "title": "Retrieves the specified database from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified database from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetDatabase.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListAclsByDatabase": {
+            "main": "./lib/actions/Catalog_ListAclsByDatabase.js",
+            "title": "Retrieves the list of access control list (ACL) entries for the database from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of access control list (ACL) entries for the database from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListAclsByDatabase.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListAssemblies": {
+            "main": "./lib/actions/Catalog_ListAssemblies.js",
+            "title": "Retrieves the list of assemblies from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of assemblies from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListAssemblies.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetAssembly": {
+            "main": "./lib/actions/Catalog_GetAssembly.js",
+            "title": "Retrieves the specified assembly from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified assembly from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetAssembly.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListCredentials": {
+            "main": "./lib/actions/Catalog_ListCredentials.js",
+            "title": "Retrieves the list of credentials from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of credentials from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListCredentials.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetCredential": {
+            "main": "./lib/actions/Catalog_GetCredential.js",
+            "title": "Retrieves the specified credential from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified credential from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetCredential.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_UpdateCredential": {
+            "main": "./lib/actions/Catalog_UpdateCredential.js",
+            "title": "Modifies the specified credential for use with external data sources in the specified database",
+            "description": "Modifies the specified credential for use with external data sources in the specified database",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_UpdateCredential.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_DeleteCredential": {
+            "main": "./lib/actions/Catalog_DeleteCredential.js",
+            "title": "Deletes the specified credential in the specified database",
+            "description": "Deletes the specified credential in the specified database",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_DeleteCredential.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_CreateCredential": {
+            "main": "./lib/actions/Catalog_CreateCredential.js",
+            "title": "Creates the specified credential for use with external data sources in the specified database.",
+            "description": "Creates the specified credential for use with external data sources in the specified database.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_CreateCredential.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListExternalDataSources": {
+            "main": "./lib/actions/Catalog_ListExternalDataSources.js",
+            "title": "Retrieves the list of external data sources from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of external data sources from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListExternalDataSources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetExternalDataSource": {
+            "main": "./lib/actions/Catalog_GetExternalDataSource.js",
+            "title": "Retrieves the specified external data source from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified external data source from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetExternalDataSource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListSchemas": {
+            "main": "./lib/actions/Catalog_ListSchemas.js",
+            "title": "Retrieves the list of schemas from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of schemas from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListSchemas.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetSchema": {
+            "main": "./lib/actions/Catalog_GetSchema.js",
+            "title": "Retrieves the specified schema from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified schema from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetSchema.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListPackages": {
+            "main": "./lib/actions/Catalog_ListPackages.js",
+            "title": "Retrieves the list of packages from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of packages from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListPackages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetPackage": {
+            "main": "./lib/actions/Catalog_GetPackage.js",
+            "title": "Retrieves the specified package from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified package from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetPackage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListProcedures": {
+            "main": "./lib/actions/Catalog_ListProcedures.js",
+            "title": "Retrieves the list of procedures from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of procedures from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListProcedures.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetProcedure": {
+            "main": "./lib/actions/Catalog_GetProcedure.js",
+            "title": "Retrieves the specified procedure from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified procedure from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetProcedure.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTableStatisticsByDatabaseAndSchema": {
+            "main": "./lib/actions/Catalog_ListTableStatisticsByDatabaseAndSchema.js",
+            "title": "Retrieves the list of all table statistics within the specified schema from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of all table statistics within the specified schema from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTableStatisticsByDatabaseAndSchema.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTables": {
+            "main": "./lib/actions/Catalog_ListTables.js",
+            "title": "Retrieves the list of tables from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of tables from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTables.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetTable": {
+            "main": "./lib/actions/Catalog_GetTable.js",
+            "title": "Retrieves the specified table from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified table from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetTable.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTablePartitions": {
+            "main": "./lib/actions/Catalog_ListTablePartitions.js",
+            "title": "Retrieves the list of table partitions from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of table partitions from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTablePartitions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetTablePartition": {
+            "main": "./lib/actions/Catalog_GetTablePartition.js",
+            "title": "Retrieves the specified table partition from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified table partition from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetTablePartition.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_PreviewTablePartition": {
+            "main": "./lib/actions/Catalog_PreviewTablePartition.js",
+            "title": "Retrieves a preview set of rows in given partition.",
+            "description": "Retrieves a preview set of rows in given partition.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_PreviewTablePartition.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_PreviewTable": {
+            "main": "./lib/actions/Catalog_PreviewTable.js",
+            "title": "Retrieves a preview set of rows in given table.",
+            "description": "Retrieves a preview set of rows in given table.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_PreviewTable.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTableStatistics": {
+            "main": "./lib/actions/Catalog_ListTableStatistics.js",
+            "title": "Retrieves the list of table statistics from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of table statistics from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTableStatistics.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetTableStatistic": {
+            "main": "./lib/actions/Catalog_GetTableStatistic.js",
+            "title": "Retrieves the specified table statistics from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified table statistics from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetTableStatistic.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTableFragments": {
+            "main": "./lib/actions/Catalog_ListTableFragments.js",
+            "title": "Retrieves the list of table fragments from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of table fragments from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTableFragments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTableTypes": {
+            "main": "./lib/actions/Catalog_ListTableTypes.js",
+            "title": "Retrieves the list of table types from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of table types from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTableTypes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetTableType": {
+            "main": "./lib/actions/Catalog_GetTableType.js",
+            "title": "Retrieves the specified table type from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified table type from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetTableType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTableValuedFunctions": {
+            "main": "./lib/actions/Catalog_ListTableValuedFunctions.js",
+            "title": "Retrieves the list of table valued functions from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of table valued functions from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTableValuedFunctions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetTableValuedFunction": {
+            "main": "./lib/actions/Catalog_GetTableValuedFunction.js",
+            "title": "Retrieves the specified table valued function from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified table valued function from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetTableValuedFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTypes": {
+            "main": "./lib/actions/Catalog_ListTypes.js",
+            "title": "Retrieves the list of types within the specified database and schema from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of types within the specified database and schema from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTypes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListViews": {
+            "main": "./lib/actions/Catalog_ListViews.js",
+            "title": "Retrieves the list of views from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of views from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListViews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetView": {
+            "main": "./lib/actions/Catalog_GetView.js",
+            "title": "Retrieves the specified view from the Data Lake Analytics catalog.",
+            "description": "Retrieves the specified view from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetView.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_DeleteAllSecrets": {
+            "main": "./lib/actions/Catalog_DeleteAllSecrets.js",
+            "title": "Deletes all secrets in the specified database. This is deprecated and will be removed in the next release. In the future, please only drop individual credentials using DeleteCredential",
+            "description": "Deletes all secrets in the specified database. This is deprecated and will be removed in the next release. In the future, please only drop individual credentials using DeleteCredential",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_DeleteAllSecrets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_DeleteSecret": {
+            "main": "./lib/actions/Catalog_DeleteSecret.js",
+            "title": "Deletes the specified secret in the specified database. This is deprecated and will be removed in the next release. Please use DeleteCredential instead.",
+            "description": "Deletes the specified secret in the specified database. This is deprecated and will be removed in the next release. Please use DeleteCredential instead.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_DeleteSecret.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_GetSecret": {
+            "main": "./lib/actions/Catalog_GetSecret.js",
+            "title": "Gets the specified secret in the specified database. This is deprecated and will be removed in the next release. Please use GetCredential instead.",
+            "description": "Gets the specified secret in the specified database. This is deprecated and will be removed in the next release. Please use GetCredential instead.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_GetSecret.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_UpdateSecret": {
+            "main": "./lib/actions/Catalog_UpdateSecret.js",
+            "title": "Modifies the specified secret for use with external data sources in the specified database. This is deprecated and will be removed in the next release. Please use UpdateCredential instead.",
+            "description": "Modifies the specified secret for use with external data sources in the specified database. This is deprecated and will be removed in the next release. Please use UpdateCredential instead.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_UpdateSecret.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_CreateSecret": {
+            "main": "./lib/actions/Catalog_CreateSecret.js",
+            "title": "Creates the specified secret for use with external data sources in the specified database. This is deprecated and will be removed in the next release. Please use CreateCredential instead.",
+            "description": "Creates the specified secret for use with external data sources in the specified database. This is deprecated and will be removed in the next release. Please use CreateCredential instead.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_CreateSecret.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTableStatisticsByDatabase": {
+            "main": "./lib/actions/Catalog_ListTableStatisticsByDatabase.js",
+            "title": "Retrieves the list of all statistics in a database from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of all statistics in a database from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTableStatisticsByDatabase.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTablesByDatabase": {
+            "main": "./lib/actions/Catalog_ListTablesByDatabase.js",
+            "title": "Retrieves the list of all tables in a database from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of all tables in a database from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTablesByDatabase.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListTableValuedFunctionsByDatabase": {
+            "main": "./lib/actions/Catalog_ListTableValuedFunctionsByDatabase.js",
+            "title": "Retrieves the list of all table valued functions in a database from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of all table valued functions in a database from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListTableValuedFunctionsByDatabase.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Catalog_ListViewsByDatabase": {
+            "main": "./lib/actions/Catalog_ListViewsByDatabase.js",
+            "title": "Retrieves the list of all views in a database from the Data Lake Analytics catalog.",
+            "description": "Retrieves the list of all views in a database from the Data Lake Analytics catalog.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Catalog_ListViewsByDatabase.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
